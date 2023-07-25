@@ -1,0 +1,12 @@
+.about {
+    max-width: 1000px;
+}
+
+.about__title {
+    font-size: 4.5rem;
+    line-height: 1.15;
+}
+
+.about__text {
+    font-size: 1.5rem;
+}

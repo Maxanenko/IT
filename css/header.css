@@ -1,0 +1,24 @@
+.header {
+    background: rgba(var(--c-rgb-base), .05);
+    backdrop-filter: blur(.25rem);
+    padding: 1rem 0;
+}
+
+.header__container {
+    display: flex;
+    align-items: center;
+    gap: 2.5%;
+}
+
+.header__addons {
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+    margin-left: auto;
+}
+.header__addon {
+    padding: 1em;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
