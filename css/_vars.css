@@ -20,4 +20,10 @@
 
     --c-primary-d: #314373;
     --c-rgb-primary-d: 49, 67, 115;
+
+    --c-primary-g-l: #7190FF;
+    --c-rgb-primary-g-l: 113, 144, 255;
+
+    --c-primary-g: #6176AD;
+    --c-rgb-primary-g: 97, 118, 173;
 }

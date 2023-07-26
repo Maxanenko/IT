@@ -41,6 +41,7 @@
 }
 
 .story__text {
+    translate: 0 1.25em;
 }
 
 
@@ -54,12 +55,18 @@
     content: '';
     width: .125rem;
 
-    background: var(--c-primary);
+    background: linear-gradient(
+            rgba(var(--c-rgb-primary-l), 1) 0%,
+            rgba(var(--c-rgb-primary-l), 0) 100%
+    ), var(--c-base);
 
     position: absolute;
-    top: -6rem;
+    top: -6rem; /* content padding */
     bottom: 0;
+    left: 0;
     translate: -50%;
+
+    z-index: 1;
 }
 
 .story__infographic:after {
@@ -67,10 +74,90 @@
     width: 100%;
     height: 2rem;
 
+    left: -.0625rem; /* half of border */
+
     position: absolute;
 
-    border: .125rem solid var(--c-primary);
+
+    padding: 0 0 .125rem .125rem;
+    background: linear-gradient(
+            90deg,
+            rgba(var(--c-rgb-primary-l), .1) 20%,
+            rgba(var(--c-rgb-primary-l), 1) 60%,
+            rgba(var(--c-rgb-primary-l), .1) 80%,
+            rgba(var(--c-rgb-primary-l), .1) 100%
+    ), var(--c-base);
+
+    mask: linear-gradient(#fff) content-box,
+    linear-gradient(#fff);
+    mask-composite: exclude;
+
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+
+
     border-top: none;
     border-right: none;
     border-bottom-left-radius: 1000rem;
+}
+
+.story__dot {
+    font-size: .75rem;
+
+    width: 1em;
+    height: 1em;
+    background-color: var(--c-primary-l);
+
+    border-radius: 100%;
+
+    position: absolute;
+    top: 2rem; /* story__infographic:after height */
+    left: 100%;
+    translate: -50% -50%;
+    z-index: 2;
+
+    box-shadow: 0 0 2em 0 var(--c-primary-l),
+    0 0 2em 0 rgba(var(--c-rgb-primary-l), .25) inset;
+}
+
+.story__dot_main {
+    font-size: 1.5rem;
+    background-color: var(--c-secondary);
+
+    top: -6rem; /* content padding */
+    left: 0;
+}
+
+
+.story__block:nth-of-type(2n) .story__content {
+    flex-direction: row-reverse;
+    translate: -50%;
+}
+
+.story__block:nth-of-type(2n) .story__infographic {
+    transform: scaleX(-1);
+}
+
+.story__block:nth-of-type(2n) .story__text {
+    text-align: right;
+}
+
+
+.story__block_passed {
+    color: var(--c-primary-g);
+}
+
+.story__block_passed .story__dot {
+    background-color: var(--c-primary-g-l);
+}
+
+
+.story__block__hidden {
+    color: var(--c-primary-d);
+}
+
+.story__block__hidden .story__subtitle,
+.story__block__hidden .story__content {
+    display: none;
 }
