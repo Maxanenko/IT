@@ -1,4 +1,9 @@
 .story {
+    --content-padding: 6rem;
+    --infographic-width: 25%;
+    --infographic-stroke: .125rem;
+    --infographic-radius: 2rem;
+    --infographic-dot-pos: 75%;
 }
 
 .story__block {
@@ -32,7 +37,7 @@
 .story__content {
     width: 50%;
 
-    padding-top: 6rem;
+    padding-top: var(--content-padding);
 
     display: flex;
     gap: 1rem;
@@ -41,19 +46,19 @@
 }
 
 .story__text {
-    translate: 0 1.25em;
+    translate: 0 -.75em;
 }
 
 
 .story__infographic {
-    width: 25%;
+    width: var(--infographic-width);
     flex-shrink: 0;
     position: relative;
 }
 
 .story__infographic:before {
     content: '';
-    width: .125rem;
+    width: calc(var(--infographic-stroke) * .5);
 
     background: linear-gradient(
             rgba(var(--c-rgb-primary-l), 1) 0%,
@@ -61,7 +66,7 @@
     ), var(--c-base);
 
     position: absolute;
-    top: -6rem; /* content padding */
+    top: calc(-1 * var(--content-padding));
     bottom: 0;
     left: 0;
     translate: -50%;
@@ -70,37 +75,38 @@
 }
 
 .story__infographic:after {
+    --height: min(var(--infographic-radius), var(--content-padding));
+
     content: '';
     width: 100%;
-    height: 2rem;
-
-    left: -.0625rem; /* half of border */
+    height: var(--height);
 
     position: absolute;
+    top: calc(var(--height) * -1);
+    left: calc(var(--infographic-stroke) * -.5);
 
-
-    padding: 0 0 .125rem .125rem;
+    padding: 0 0 var(--infographic-stroke) var(--infographic-stroke);
     background: linear-gradient(
             90deg,
-            rgba(var(--c-rgb-primary-l), .1) 20%,
-            rgba(var(--c-rgb-primary-l), 1) 60%,
-            rgba(var(--c-rgb-primary-l), .1) 80%,
-            rgba(var(--c-rgb-primary-l), .1) 100%
+            rgba(var(--c-rgb-primary-l), .125) 20%,
+            rgba(var(--c-rgb-primary-l), 1) var(--infographic-dot-pos),
+            rgba(var(--c-rgb-primary-l), 0) 100%
     ), var(--c-base);
 
-    mask: linear-gradient(#fff) content-box,
-    linear-gradient(#fff);
+    mask: linear-gradient(#fff, #fff) content-box,
+    linear-gradient(#fff, #fff);
     mask-composite: exclude;
 
-    -webkit-mask: linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
+    -webkit-mask: linear-gradient(#fff, #fff) content-box,
+    linear-gradient(#fff, #fff);
     -webkit-mask-composite: xor;
 
 
     border-top: none;
     border-right: none;
-    border-bottom-left-radius: 1000rem;
+    border-bottom-left-radius: var(--infographic-radius);
 }
+
 
 .story__dot {
     font-size: .75rem;
@@ -112,8 +118,8 @@
     border-radius: 100%;
 
     position: absolute;
-    top: 2rem; /* story__infographic:after height */
-    left: 100%;
+    top: calc(var(--infographic-stroke) * .5);
+    left: var(--infographic-dot-pos);
     translate: -50% -50%;
     z-index: 2;
 
@@ -125,7 +131,7 @@
     font-size: 1.5rem;
     background-color: var(--c-secondary);
 
-    top: -6rem; /* content padding */
+    top: calc(-1 * var(--content-padding));
     left: 0;
 }
 
@@ -150,6 +156,10 @@
 
 .story__block_passed .story__dot {
     background-color: var(--c-primary-g-l);
+}
+
+.story__block_passed .story__dot_main {
+    font-size: 1rem;
 }
 
 
