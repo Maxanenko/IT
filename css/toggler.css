@@ -1,4 +1,6 @@
 .toggler {
+    --fill: var(--c-primary-l);
+
     background: transparent;
     border: none;
 
@@ -19,7 +21,7 @@
 
     border-radius: 1000rem;
 
-    background-color: var(--c-secondary);
+    background-color: var(--fill);
 
     position: absolute;
     left: 0;

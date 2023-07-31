@@ -1,7 +1,5 @@
 .main {
-    flex-grow: 1;
-
-    padding: 5rem 10rem;
+    padding: 5rem 0;
 }
 
 .main__container {

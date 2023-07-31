@@ -37,17 +37,18 @@
                 />
             </svg>
         </nav>
+        <button class="toggler header__toggler toggler_active">
+            <span class="toggler__line"></span>
+        </button>
         <nav class="menu header__menu">
-            <button class="toggler toggler_active header__toggler">
-                <span class="toggler__line"></span>
-            </button>
-
-            <ul class="menu__items">
-                <li><a href="#" class="menu__item">Lorem.</a></li>
-                <li><a href="#" class="menu__item">Ducimus.</a></li>
-                <li><a href="#" class="menu__item">Quos?</a></li>
-                <li><a href="#" class="menu__item">Provident!</a></li>
-            </ul>
+            <div class="menu__items">
+                <a href="" class="menu__item">Lorem.</a>
+                <a href="" class="menu__item">Ex.</a>
+                <a href="" class="menu__item">Odio?</a>
+                <a href="" class="menu__item">Soluta.</a>
+                <a href="" class="menu__item">Assumenda.</a>
+                <a href="" class="menu__item">Cupiditate!</a>
+            </div>
         </nav>
         <nav class="header__addons">
             <button class="icon header__addon">
@@ -75,18 +76,6 @@
     </div>
 </header>
 
-<nav class="pagination">
-    <div class="container pagination__container">
-        <ul class="pagination__dots">
-            <li class="pagination__dot pagination__dot_active"></li>
-            <li class="pagination__dot"></li>
-            <li class="pagination__dot"></li>
-            <li class="pagination__dot"></li>
-            <li class="pagination__dot"></li>
-        </ul>
-    </div>
-</nav>
-
 <main class="main">
     <div class="container main__container">
         <section class="about">
@@ -100,101 +89,113 @@
         </section>
 
         <section class="story">
-            <div class="story__block">
-                <header class="story__header">
-                    <h2 class="story__title">
-                        1999
-                    </h2>
-                    <p class="story__subtitle">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing.
-                    </p>
-                </header>
-                <main class="story__content">
-                    <div class="story__infographic">
-                        <span class="story__dot story__dot_main"></span>
-                        <span class="story__dot"></span>
-                    </div>
-                    <p class="story__text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis distinctio labore molestiae
-                        sapiente sint. Assumenda dolor expedita voluptas. Alias amet, atque cum dignissimos dolorum
-                        error et
-                        eum explicabo ipsa magni minima necessitatibus numquam officia quae quidem recusandae
-                        reprehenderit
-                        sequi soluta ut veritatis! Atque magnam molestiae natus quo unde. Explicabo, fugiat?
-                    </p>
-                </main>
-            </div>
-            <div class="story__block story__block_active">
-                <header class="story__header">
-                    <h2 class="story__title">
-                        1999
-                    </h2>
-                    <p class="story__subtitle">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing.
-                    </p>
-                </header>
-                <main class="story__content">
-                    <div class="story__infographic">
-                        <span class="story__dot story__dot_main"></span>
-                        <span class="story__dot"></span>
-                    </div>
-                    <p class="story__text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis distinctio labore molestiae
-                        sapiente sint. Assumenda dolor expedita voluptas. Alias amet, atque cum dignissimos dolorum
-                        error et
-                        eum explicabo ipsa magni minima necessitatibus numquam officia quae quidem recusandae
-                        reprehenderit
-                        sequi soluta ut veritatis! Atque magnam molestiae natus quo unde. Explicabo, fugiat?
-                    </p>
-                </main>
-            </div>
-            <div class="story__block story__block_active">
-                <header class="story__header">
-                    <h2 class="story__title">
-                        1999
-                    </h2>
-                    <p class="story__subtitle">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing.
-                    </p>
-                </header>
-                <main class="story__content">
-                    <div class="story__infographic">
-                        <span class="story__dot story__dot_main"></span>
-                        <span class="story__dot"></span>
-                    </div>
-                    <p class="story__text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis distinctio labore molestiae
-                        sapiente sint. Assumenda dolor expedita voluptas. Alias amet, atque cum dignissimos dolorum
-                        error et
-                        eum explicabo ipsa magni minima necessitatibus numquam officia quae quidem recusandae
-                        reprehenderit
-                        sequi soluta ut veritatis! Atque magnam molestiae natus quo unde. Explicabo, fugiat?
-                    </p>
-                </main>
-            </div>
-            <div class="story__block story__block__hidden">
-                <header class="story__header">
-                    <h2 class="story__title">
-                        1999
-                    </h2>
-                    <p class="story__subtitle">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing.
-                    </p>
-                </header>
-                <main class="story__content">
-                    <div class="story__infographic">
-                        <span class="story__dot story__dot_main"></span>
-                        <span class="story__dot"></span>
-                    </div>
-                    <p class="story__text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis distinctio labore molestiae
-                        sapiente sint. Assumenda dolor expedita voluptas. Alias amet, atque cum dignissimos dolorum
-                        error et
-                        eum explicabo ipsa magni minima necessitatibus numquam officia quae quidem recusandae
-                        reprehenderit
-                        sequi soluta ut veritatis! Atque magnam molestiae natus quo unde. Explicabo, fugiat?
-                    </p>
-                </main>
+            <nav class="pagination story__pagination">
+                <ul class="pagination__dots">
+                    <li class="pagination__dot pagination__dot_active"></li>
+                    <li class="pagination__dot"></li>
+                    <li class="pagination__dot"></li>
+                    <li class="pagination__dot"></li>
+                    <li class="pagination__dot"></li>
+                </ul>
+            </nav>
+
+            <div class="story__blocks">
+                <div class="story__block">
+                    <header class="story__header">
+                        <h2 class="story__title">
+                            1999
+                        </h2>
+                        <p class="story__subtitle">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing.
+                        </p>
+                    </header>
+                    <main class="story__content">
+                        <div class="story__infographic">
+                            <span class="story__dot story__dot_main"></span>
+                            <span class="story__dot"></span>
+                        </div>
+                        <p class="story__text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis distinctio labore molestiae
+                            sapiente sint. Assumenda dolor expedita voluptas. Alias amet, atque cum dignissimos dolorum
+                            error et
+                            eum explicabo ipsa magni minima necessitatibus numquam officia quae quidem recusandae
+                            reprehenderit
+                            sequi soluta ut veritatis! Atque magnam molestiae natus quo unde. Explicabo, fugiat?
+                        </p>
+                    </main>
+                </div>
+                <div class="story__block story__block_active">
+                    <header class="story__header">
+                        <h2 class="story__title">
+                            1999
+                        </h2>
+                        <p class="story__subtitle">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing.
+                        </p>
+                    </header>
+                    <main class="story__content">
+                        <div class="story__infographic">
+                            <span class="story__dot story__dot_main"></span>
+                            <span class="story__dot"></span>
+                        </div>
+                        <p class="story__text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis distinctio labore molestiae
+                            sapiente sint. Assumenda dolor expedita voluptas. Alias amet, atque cum dignissimos dolorum
+                            error et
+                            eum explicabo ipsa magni minima necessitatibus numquam officia quae quidem recusandae
+                            reprehenderit
+                            sequi soluta ut veritatis! Atque magnam molestiae natus quo unde. Explicabo, fugiat?
+                        </p>
+                    </main>
+                </div>
+                <div class="story__block story__block_active">
+                    <header class="story__header">
+                        <h2 class="story__title">
+                            1999
+                        </h2>
+                        <p class="story__subtitle">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing.
+                        </p>
+                    </header>
+                    <main class="story__content">
+                        <div class="story__infographic">
+                            <span class="story__dot story__dot_main"></span>
+                            <span class="story__dot"></span>
+                        </div>
+                        <p class="story__text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis distinctio labore molestiae
+                            sapiente sint. Assumenda dolor expedita voluptas. Alias amet, atque cum dignissimos dolorum
+                            error et
+                            eum explicabo ipsa magni minima necessitatibus numquam officia quae quidem recusandae
+                            reprehenderit
+                            sequi soluta ut veritatis! Atque magnam molestiae natus quo unde. Explicabo, fugiat?
+                        </p>
+                    </main>
+                </div>
+                <div class="story__block story__block__hidden">
+                    <header class="story__header">
+                        <h2 class="story__title">
+                            1999
+                        </h2>
+                        <p class="story__subtitle">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing.
+                        </p>
+                    </header>
+                    <main class="story__content">
+                        <div class="story__infographic">
+                            <span class="story__dot story__dot_main"></span>
+                            <span class="story__dot"></span>
+                        </div>
+                        <p class="story__text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis distinctio labore molestiae
+                            sapiente sint. Assumenda dolor expedita voluptas. Alias amet, atque cum dignissimos dolorum
+                            error et
+                            eum explicabo ipsa magni minima necessitatibus numquam officia quae quidem recusandae
+                            reprehenderit
+                            sequi soluta ut veritatis! Atque magnam molestiae natus quo unde. Explicabo, fugiat?
+                        </p>
+                    </main>
+                </div>
             </div>
         </section>
     </div>
