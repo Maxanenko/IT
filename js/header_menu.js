@@ -14,7 +14,6 @@ let scrollBlocked = false;
         ScrollToTop();
         ToggleScroll();
     });
-
 })();
 
 

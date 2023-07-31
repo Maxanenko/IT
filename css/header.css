@@ -77,12 +77,16 @@
     .header__menu .menu__item {
         padding-left: 0;
         padding-right: 0;
+        opacity: 0;
     }
 
 
     .header__menu_open {
         height: 100vh;
         padding-top: 10rem;
+    }
+    .header__menu_open .menu__item {
+        opacity: 1;
     }
 }
 
