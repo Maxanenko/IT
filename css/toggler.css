@@ -26,6 +26,8 @@
     position: absolute;
     left: 0;
     translate: 0 -50%;
+
+    transition: inherit;
 }
 
 .toggler:before {
@@ -42,14 +44,16 @@
 
 
 .toggler_active:before,
-.toggler_active:after {
+.toggler_active:after,
+.toggler_active .toggler__line {
     top: 50%;
     left: 50%;
     translate: -50% -50%;
 }
 
 .toggler_active .toggler__line {
-    display: none;
+    width: 0;
+    height: 0;
 }
 
 .toggler_active:before {

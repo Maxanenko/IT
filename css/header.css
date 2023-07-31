@@ -49,18 +49,20 @@
         display: block;
     }
 
+
     .header__menu {
         background: var(--c-base);
         flex-direction: column;
 
         padding: inherit;
-        padding-top: 10rem;
 
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
-        height: 100vh;
+        height: 0;
+
+        overflow: hidden;
     }
 
     .header__menu .menu__items {
@@ -75,6 +77,12 @@
     .header__menu .menu__item {
         padding-left: 0;
         padding-right: 0;
+    }
+
+
+    .header__menu_open {
+        height: 100vh;
+        padding-top: 10rem;
     }
 }
 
