@@ -4,7 +4,7 @@
     line-height: var(--f-line-height);
     font-weight: 400;
 
-    transition: .25s ease;
+    transition: .125s ease;
 }
 
 html {
