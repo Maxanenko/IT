@@ -1,58 +1,75 @@
-let story_secs = document.querySelectorAll(".story");
+const hiddenClass = "story__block_hidden";
+const activeClass = "story__block_active";
+const activeDotClass = "pagination__dot_active";
 
-story_secs.forEach(story => {
-    let blocks = [...story.querySelectorAll(".story__block")];
-    let pagination = story.querySelector(".story__pagination");
-    let dotsContainer = pagination.querySelector(".pagination__dots");
+
+InitStoryBoards();
+
+
+function InitStoryBoards() {
+    document
+        .querySelectorAll(".story")
+        .forEach(InitStoryBoard);
+}
+
+function InitStoryBoard(story) {
+    const blocks = [...story.querySelectorAll(".story__block")];
+    const pagination = story.querySelector(".story__pagination");
+    const dotsContainer = pagination.querySelector(".pagination__dots");
+
     let dots = [];
-
     let activeBlockId = 0;
 
-
-    InitPagination();
-    HideAll();
-    CheckAll();
-    addEventListener('scroll', CheckAll);
+    InitBlocks();
+    addEventListener('scroll', CheckBlocks);
 
 
-    function InitPagination() {
-        for (let i = 0; i < blocks.length; i++) {
-            let dot = document.createElement('div');
-            dot.className = "pagination__dot";
-            dotsContainer.append(dot);
-            dots.push(dot);
-        }
+    function AddDot(dotsContainer) {
+        let dot = document.createElement('div');
+        dot.className = "pagination__dot";
+        dotsContainer.append(dot);
+        return dot;
     }
 
-    function HideAll() {
-        blocks.forEach(Hide);
+
+    function InitBlocks() {
+        blocks.forEach(block => {
+            Hide(block);
+            dots.push(AddDot(dotsContainer));
+            Check(block);
+        });
     }
 
-    function CheckAll() {
-        blocks.forEach(Check);
+    function CheckBlocks() {
+        blocks.forEach(block => {
+            Check(block);
+        });
     }
-
 
     function Check(block) {
-        if (OnScreen(block)) {
+        if (InFocus(block)) {
             Show(block);
             SetActive(block);
         }
     }
 
 
+    function InFocus(block) {
+        const rect = block.getBoundingClientRect();
+        const blockCenter = rect.top + .5 * rect.height;
+        const windowThreshold = .75 * window.innerHeight;
+        return blockCenter - windowThreshold <= 0;
+    }
+
     function Show(block) {
-        block.classList.remove("story__block_hidden");
+        block.classList.remove(hiddenClass);
     }
 
     function Hide(block) {
-        block.classList.add('story__block_hidden');
+        block.classList.add(hiddenClass);
     }
 
     function SetActive(block) {
-        const activeClass = "story__block_active";
-        const activeDotClass = "pagination__dot_active";
-
         dots[activeBlockId].classList.remove(activeDotClass)
         blocks[activeBlockId].classList.remove(activeClass);
 
@@ -61,13 +78,4 @@ story_secs.forEach(story => {
         dots[activeBlockId].classList.add(activeDotClass)
         blocks[activeBlockId].classList.add(activeClass);
     }
-
-
-    function OnScreen(block) {
-        let top = window.scrollY;
-        let offset = block.offsetTop;
-        let height = block.offsetHeight;
-
-        return top >= offset;
-    }
-})
+}
