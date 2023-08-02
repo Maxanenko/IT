@@ -1,20 +1,30 @@
+const header = document.querySelector(".header");
+const toggler = header.querySelector(".toggler");
+const menu = header.querySelector(".header__menu");
+
 let scrollBlocked = false;
 
 
 (function () {
-    let header = document.querySelector(".header");
-    let toggler = header.querySelector(".toggler");
-    let menu = header.querySelector(".header__menu");
-
-
     toggler.addEventListener('click', () => {
-        menu.classList.toggle('header__menu_open');
-        toggler.classList.toggle('toggler_active');
+        ToggleToggler();
+        ToggleMenu();
 
         ScrollToTop();
         ToggleScroll();
     });
 })();
+
+
+function ToggleMenu() {
+    const menuOpenClass = 'header__menu_open';
+    menu.classList.toggle(menuOpenClass);
+}
+
+function ToggleToggler() {
+    const togglerActiveClass = 'toggler_active';
+    toggler.classList.toggle(togglerActiveClass);
+}
 
 
 function ToggleScroll() {

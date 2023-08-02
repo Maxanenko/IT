@@ -1,7 +1,6 @@
 .main {
     padding: 5rem 0;
 }
-
 .main__container {
     display: flex;
     flex-direction: column;

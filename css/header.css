@@ -17,10 +17,6 @@
     display: none;
 }
 
-.header__menu {
-    z-index: -1;
-}
-
 .header__addons {
     display: flex;
     align-items: center;
@@ -49,7 +45,6 @@
         display: block;
     }
 
-
     .header__menu {
         background: var(--c-base);
         flex-direction: column;
@@ -63,6 +58,11 @@
         height: 0;
 
         overflow: hidden;
+        z-index: -1;
+
+        transition: height, padding, opacity;
+        transition-duration: .125s;
+        transition-timing-function: ease;
     }
 
     .header__menu .menu__items {
@@ -85,6 +85,7 @@
         height: 100vh;
         padding-top: 10rem;
     }
+
     .header__menu_open .menu__item {
         opacity: 1;
     }

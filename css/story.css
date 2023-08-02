@@ -7,6 +7,10 @@
 
     position: relative;
     display: flex;
+
+    transition: color, opacity;
+    transition-duration: .125s;
+    transition-timing-function: ease;
 }
 
 
@@ -152,6 +156,8 @@
     top: 0;
     height: 100vh;
     translate: -125%;
+
+    transition: .125s ease;
 }
 
 
@@ -172,6 +178,7 @@
 .story__block_hidden {
     color: var(--c-primary-d);
 }
+
 .story__block_hidden .story__content,
 .story__block_hidden .story__subtitle {
     opacity: 0;
@@ -195,6 +202,10 @@
 
 
 @media only screen and (max-width: 1100px) {
+    .story {
+        --infographic-dot-pos: 100%;
+    }
+
     .story__block {
         align-items: start;
     }

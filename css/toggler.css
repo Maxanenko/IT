@@ -1,15 +1,16 @@
 .toggler {
     --fill: var(--c-primary-l);
 
-    background: transparent;
-    border: none;
-
     font-size: 1.5rem;
-
     width: 1em;
     height: 1em;
 
+    background: transparent;
+    border: none;
+
     position: relative;
+
+    cursor: pointer;
 }
 
 .toggler__line,

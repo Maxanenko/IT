@@ -5,6 +5,7 @@
     font-weight: 400;
 
     /* transition: .125s ease; */
+    transition: inherit;
 }
 
 html {
