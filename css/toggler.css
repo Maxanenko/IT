@@ -11,6 +11,8 @@
     position: relative;
 
     cursor: pointer;
+
+    transition: rotate .125s ease;
 }
 
 .toggler__line,

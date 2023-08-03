@@ -18,7 +18,8 @@ function InitStoryBoard(story) {
     const dotsContainer = pagination.querySelector(".pagination__dots");
 
     let dots = [];
-    let activeBlockId = 0;
+    let activeBlock = null;
+    let nextActiveBlock = null;
 
     InitBlocks();
     addEventListener('scroll', CheckBlocks);
@@ -38,26 +39,26 @@ function InitStoryBoard(story) {
             dots.push(AddDot(dotsContainer));
             Check(block);
         });
+        SetActive(nextActiveBlock)
     }
 
     function CheckBlocks() {
-        blocks.forEach(block => {
-            Check(block);
-        });
+        blocks.forEach(Check);
+        SetActive(nextActiveBlock)
     }
 
     function Check(block) {
-        if (InFocus(block)) {
+        if (UnderVisibleLine(block)) {
             Show(block);
-            SetActive(block);
+            nextActiveBlock = block;
         }
     }
 
 
-    function InFocus(block) {
+    function UnderVisibleLine(block) {
         const rect = block.getBoundingClientRect();
         const blockCenter = rect.top + .5 * rect.height;
-        const windowThreshold = .75 * window.innerHeight;
+        const windowThreshold = .8 * window.innerHeight;
         return blockCenter - windowThreshold <= 0;
     }
 
@@ -69,13 +70,18 @@ function InitStoryBoard(story) {
         block.classList.add(hiddenClass);
     }
 
+
     function SetActive(block) {
-        dots[activeBlockId].classList.remove(activeDotClass)
-        blocks[activeBlockId].classList.remove(activeClass);
+        if (activeBlock) {
+            dots[blocks.indexOf(activeBlock)].classList.remove(activeDotClass)
+            activeBlock.classList.remove(activeClass);
+        }
 
-        activeBlockId = blocks.indexOf(block);
+        activeBlock = block;
 
-        dots[activeBlockId].classList.add(activeDotClass)
-        blocks[activeBlockId].classList.add(activeClass);
+        if (activeBlock) {
+            dots[blocks.indexOf(activeBlock)].classList.add(activeDotClass)
+            activeBlock.classList.add(activeClass);
+        }
     }
 }

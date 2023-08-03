@@ -17,4 +17,22 @@
     .about {
         padding: 0;
     }
+
+    .about__title {
+        font-size: 3.5rem;
+    }
+
+    .about__text {
+        font-size: 1.25rem;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .about__title {
+        font-size: 1.75rem;
+    }
+
+    .about__text {
+        font-size: 1rem;
+    }
 }
