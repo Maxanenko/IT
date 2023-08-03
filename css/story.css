@@ -109,9 +109,8 @@
             rgba(var(--c-rgb-primary-l), 0) 100%
     ), var(--c-base);
 
-    -webkit-mask:
-            linear-gradient(#fff 0 0) content-box,
-            linear-gradient(#fff 0 0);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
 
